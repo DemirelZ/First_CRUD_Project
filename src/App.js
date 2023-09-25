@@ -71,12 +71,21 @@ function App() {
     toast.info("Kitap başarıyla güncellendi");
   };
 
+  const backgroundStyle = {
+    backgroundImage: `url(${process.env.PUBLIC_URL}/assets/library2.jpg)`,
+    width: "100%",
+    height: "200vh",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: 'repeat-y'
+  };
+
   return (
-    <div>
+    <div style={backgroundStyle}>
       <header className="bg-dark text-light text-center py-3 fs-5">
         Kitap Kurdu
       </header>
-      <div className="container border pb-5">
+      <div className="container border bg-light pb-5">
         <form className="d-flex gap-3 my-4" onSubmit={(e) => addBook(e)}>
           <input
             value={bookName}
